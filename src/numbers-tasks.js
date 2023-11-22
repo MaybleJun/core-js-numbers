@@ -209,7 +209,7 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/*n*/) {
+function isPrime(/* n */) {
   throw new Error('Not implemented');
 }
 
@@ -230,7 +230,7 @@ function isPrime(/*n*/) {
  */
 function toNumber(value, def) {
   const isNum = parseFloat(value);
-  if (!isNaN(isNum)) {
+  if (!Number.isNaN(isNum)) {
     return isNum;
   }
   return def;
@@ -423,7 +423,7 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return typeof number === 'number' && isFinite(number);
+  return typeof number === 'number' && Number.isFinite(number);
 }
 
 /**
@@ -453,7 +453,7 @@ function isInteger(number) {
  */
 function getFloatOnString(str) {
   const floatValue = parseFloat(str);
-  return isNaN(floatValue) ? NaN : floatValue;
+  return Number.isNaN(floatValue) ? NaN : floatValue;
 }
 
 /**
@@ -472,7 +472,7 @@ function getFloatOnString(str) {
  */
 function getIntegerOnString(str, base) {
   const intValue = parseInt(str, base);
-  return isNaN(intValue) ? NaN : intValue;
+  return Number.isNaN(intValue) ? NaN : intValue;
 }
 
 /**
